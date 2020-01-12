@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: miniapp-cassandra-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: miniapp-cassandra
+  template:
+      metadata:
+        labels:
+          component: miniapp-cassandra
+      spec:
+        volumes:
+            - name: miniapp-cassandra-storage
+              persistentVolumeClaim:
+                claimName: miniapp-cassandra-persistent-volume-claim
+        containers:
+            - name: cassandra
+              image: cassandra:3.11
+              ports:
+                - containerPort: 9042
+              volumeMounts:
+                - name: miniapp-cassandra-storage
+                  mountPath: /var/lib/cassandra

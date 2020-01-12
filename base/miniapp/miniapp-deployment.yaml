@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: miniapp-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: miniapp
+      app: miniapp
+  template:
+    metadata:
+      labels:
+        component: miniapp
+        app: miniapp
+    spec:
+      containers:
+        - name: miniapp
+          image: 510158725010.dkr.ecr.us-east-1.amazonaws.com/goxhere/miniapp:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: REQUIRED_CONTACT_POINT_NR
+              value: "3"
+            - name: JAVA_OPTS
+              value: "-Dconfig.resource=application-k8s.conf"
+          ports:
+            - name: management
+              containerPort: 8558
+          readinessProbe:
+            httpGet:
+              path: "/ready"
+              port: management
+            periodSeconds: 10
+            failureThreshold: 10
+            initialDelaySeconds: 20
+          livenessProbe:
+            httpGet:
+              path: "/alive"
+              port: management
+            periodSeconds: 10
+            failureThreshold: 10
+            initialDelaySeconds: 20
+      imagePullSecrets:
+        - name: awsecr-cred
