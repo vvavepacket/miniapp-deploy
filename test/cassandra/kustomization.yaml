@@ -7,3 +7,6 @@ bases:
 images:
 - name: cassandra
   newTag: '3.11'
+
+patchesStrategicMerge:
+- patch-cassandra-pv.yaml

@@ -17,6 +17,7 @@ spec:
       containers:
         - name: miniapp
           image: 510158725010.dkr.ecr.us-east-1.amazonaws.com/goxhere/miniapp:76589aca50766fabcbbe08eb32e7a97713d9e6bd
+          #image: 192.168.1.3:5000/miniapp-impl:0.1.2
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
