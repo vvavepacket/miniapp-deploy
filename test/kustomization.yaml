@@ -4,4 +4,5 @@ kind: Kustomization
 bases:
 - ./cassandra
 - ./miniapp
+- ./postgres
 - ../base/other

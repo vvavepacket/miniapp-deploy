@@ -26,6 +26,11 @@ spec:
               value: "3"
             - name: JAVA_OPTS
               value: "-Dconfig.resource=application-k8s.conf"
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: miniapp 
+                  key: pgpassword
           ports:
             - name: management
               containerPort: 8558

@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: miniapp-postgres-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: miniapp-postgres
+  template:
+      metadata:
+        labels:
+          component: miniapp-postgres
+      spec:
+        volumes:
+            - name: miniapp-postgres-storage
+              persistentVolumeClaim:
+                claimName: miniapp-postgres-persistent-volume-claim
+        containers:
+            - name: postgres
+              image: postgres
+              ports:
+                - containerPort: 5432
+              volumeMounts:
+                - name: miniapp-postgres-storage
+                  mountPath: /var/lib/postgresql/data
+              env:
+                - name: PGPASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: miniapp 
+                      key: pgpassword
