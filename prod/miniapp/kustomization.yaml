@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+- ../../base/miniapp
+
+images:
+- name: 510158725010.dkr.ecr.us-east-1.amazonaws.com/goxhere/miniapp
+  newTag: c502b83c9075f64cb7c3c066d7b6f139a0240343
