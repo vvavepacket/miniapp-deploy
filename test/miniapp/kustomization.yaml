@@ -6,4 +6,4 @@ bases:
 
 images:
 - name: 510158725010.dkr.ecr.us-east-1.amazonaws.com/goxhere/miniapp
-  newTag: 5b03ed4f9c799527f28d0b8978562dfd13762df7
+  newTag: c1c6760723dfbda5d9e40918940ecc85edccf7f5
