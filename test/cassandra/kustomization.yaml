@@ -8,5 +8,12 @@ images:
 - name: cassandra
   newTag: '3.11'
 
-patchesStrategicMerge:
-- patch-cassandra-pv.yaml
+patchesJson6902:
+- target:
+    kind: PersistentVolume
+    name: miniapp-cassandra-persistent-volume
+  path: patch-cassandra-pv.yaml
+- target:
+    kind: PersistentVolumeClaim
+    name: miniapp-cassandra-persistent-volume-claim
+  path: patch-cassandra-pvc.yaml

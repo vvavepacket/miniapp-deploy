@@ -1,7 +1,6 @@
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-    name: miniapp-cassandra-persistent-volume
-spec:
-    hostPath:
-        path: "/data/test/miniapp/cassandra"
+- op: replace
+  path: /metadata/name
+  value: test-miniapp-cassandra-persistent-volume
+- op: replace
+  path: /spec/hostpath/path
+  value: /data/test/miniapp/cassandra
