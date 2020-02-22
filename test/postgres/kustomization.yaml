@@ -8,5 +8,14 @@ images:
 - name: postgres
   newTag: '12.1'
 
-patchesStrategicMerge:
-- patch-postgres-pv.yaml
+patchesJson6902:
+- target:
+    version: v1
+    kind: PersistentVolume
+    name: miniapp-postgres-persistent-volume
+  path: patch-postgres-pv.yaml
+- target:
+    version: v1
+    kind: PersistentVolumeClaim
+    name: miniapp-postgres-persistent-volume-claim
+  path: patch-postgres-pvc.yaml
