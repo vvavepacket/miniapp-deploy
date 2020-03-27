@@ -19,3 +19,9 @@ patchesJson6902:
     kind: PersistentVolumeClaim
     name: miniapp-postgres-persistent-volume-claim
   path: patch-postgres-pvc.yaml
+- target:
+    group: apps
+    version: v1
+    kind: Deployment
+    name: miniapp-postgres-deployment
+  path: patch-postgres.yaml
