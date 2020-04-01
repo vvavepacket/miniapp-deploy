@@ -1,11 +1,11 @@
-# to reuse existing pv, replace the value with the one existing
-- op: replace
-  path: /spec/volumeName
-  value: pvc-c2187f71-6c6b-456c-b18a-86208c2d1b4f
-
-# # to use fresh PV use below
-# - op: remove
+# # to reuse existing pv, replace the value with the one existing
+# - op: replace
 #   path: /spec/volumeName
+#   value: pvc-c2187f71-6c6b-456c-b18a-86208c2d1b4f
+
+# to use fresh PV use below
+- op: remove
+  path: /spec/volumeName
 
 - op: replace
   path: /spec/storageClassName
