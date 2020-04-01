@@ -4,16 +4,14 @@ kind: Kustomization
 bases:
 - ../../base/cassandra
 
+resources:
+- ./miniapp-cassandra-persistent-volume.yaml
+
 images:
 - name: cassandra
   newTag: '3.11'
 
 patchesJson6902:
-- target:
-    version: v1
-    kind: PersistentVolume
-    name: miniapp-cassandra-persistent-volume
-  path: patch-cassandra-pv.yaml
 - target:
     version: v1
     kind: PersistentVolumeClaim

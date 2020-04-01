@@ -1,6 +1,0 @@
-- op: replace
-  path: /metadata/name
-  value: test-miniapp-cassandra-persistent-volume
-- op: replace
-  path: /spec/hostPath/path
-  value: /data/test/miniapp/cassandra
