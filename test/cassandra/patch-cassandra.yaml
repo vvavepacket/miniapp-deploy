@@ -1,7 +1,4 @@
 - op: add
-  path: /spec/template/spec/tolerations
+  path: /spec/template/spec/nodeSelector
   value:
-    - key: "env"
-      operator: "Equal"
-      value: "test"
-      effect: "NoSchedule"
+    env: test
