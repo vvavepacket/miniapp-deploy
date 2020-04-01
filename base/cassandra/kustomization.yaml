@@ -5,4 +5,3 @@ resources:
 - ./miniapp-cassandra-deployment.yaml
 - ./miniapp-cassandra-nodeport-service.yaml
 - ./miniapp-cassandra-persistent-volume-claim.yaml
-- ./miniapp-cassandra-persistent-volume.yaml
