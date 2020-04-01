@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: miniapp-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       component: miniapp
@@ -23,7 +23,7 @@ spec:
             - containerPort: 8080
           env:
             - name: REQUIRED_CONTACT_POINT_NR
-              value: "3"
+              value: "1"
             - name: JAVA_OPTS
               value: "-Dconfig.resource=application-k8s.conf"
             - name: PGPASSWORD
