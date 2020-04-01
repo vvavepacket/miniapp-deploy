@@ -6,6 +6,6 @@ spec:
     capacity:
         storage: 20Gi
     accessModes:
-        - ReadWriteMany
+        - ReadWriteOnce
     hostPath:
         path: "/data/test/miniapp/cassandra"
