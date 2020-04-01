@@ -11,11 +11,6 @@ images:
 patchesJson6902:
 - target:
     version: v1
-    kind: PersistentVolume
-    name: miniapp-cassandra-persistent-volume
-  path: patch-cassandra-pv.yaml
-- target:
-    version: v1
     kind: PersistentVolumeClaim
     name: miniapp-cassandra-persistent-volume-claim
   path: patch-cassandra-pvc.yaml

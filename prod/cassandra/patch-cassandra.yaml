@@ -5,3 +5,10 @@
       operator: "Equal"
       value: "prod"
       effect: "NoSchedule"
+- op: add
+  path: /spec/template/spec/nodeSelector
+  value:
+    env: prod
+- op: add
+  path: /spec/template/spec/containers/0/volumeMounts/0/subPath
+  value: cassandra

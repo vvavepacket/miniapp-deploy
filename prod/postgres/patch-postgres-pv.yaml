@@ -1,6 +1,0 @@
-- op: replace
-  path: /metadata/name
-  value: prod-miniapp-postgres-persistent-volume
-- op: replace
-  path: /spec/hostPath/path
-  value: /data/prod/miniapp/postgres
