@@ -1,5 +1,6 @@
-- op: remove
+- op: replace
   path: /spec/volumeName
+  value: prod-miniapp-postgres-persistent-volume
 - op: replace
   path: /spec/storageClassName
   value: rook-ceph-block

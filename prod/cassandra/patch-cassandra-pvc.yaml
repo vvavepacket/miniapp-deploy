@@ -1,3 +1,6 @@
 - op: replace
   path: /spec/volumeName
   value: prod-miniapp-cassandra-persistent-volume
+- op: replace
+  path: /spec/storageClassName
+  value: rook-ceph-block
