@@ -40,13 +40,13 @@ spec:
               port: management
             periodSeconds: 60
             failureThreshold: 10
-            initialDelaySeconds: 60
+            initialDelaySeconds: 120
           livenessProbe:
             httpGet:
               path: "/alive"
               port: management
             periodSeconds: 10
             failureThreshold: 10
-            initialDelaySeconds: 20
+            initialDelaySeconds: 120
       imagePullSecrets:
         - name: awsecr-cred
