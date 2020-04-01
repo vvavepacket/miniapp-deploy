@@ -1,5 +1,12 @@
+## to reuse existing pv, replace the value with the one existing
+#- op: replace
+#  path: /spec/volumeName
+#  value: prod-miniapp-cassandra-persistent-volume
+
+## to use fresh PV use below
 - op: remove
   path: /spec/volumeName
+  
 - op: replace
   path: /spec/storageClassName
   value: rook-ceph-block
