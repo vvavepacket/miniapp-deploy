@@ -40,7 +40,7 @@ spec:
               port: management
             periodSeconds: 60
             failureThreshold: 10
-            initialDelaySeconds: 20
+            initialDelaySeconds: 60
           livenessProbe:
             httpGet:
               path: "/alive"
