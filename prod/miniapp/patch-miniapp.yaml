@@ -5,6 +5,10 @@
       operator: "Equal"
       value: "prod"
       effect: "NoSchedule"
+- op: add
+  path: /spec/template/spec/nodeSelector
+  value:
+    env: prod
 #replica
 - op: replace
   path: /spec/replicas
