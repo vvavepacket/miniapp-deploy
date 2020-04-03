@@ -6,7 +6,7 @@ bases:
 
 images:
 - name: 510158725010.dkr.ecr.us-east-1.amazonaws.com/goxhere/miniapp
-  newTag: 206e24cb015b85436756fb56f66e323b7b6208d8
+  newTag: f168c10b4bd164d321e2a3d49bd1145391a66af1
 
 patchesJson6902:
 - path: patch-miniapp.yaml
