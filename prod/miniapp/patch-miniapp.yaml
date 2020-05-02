@@ -18,19 +18,28 @@
   value: "3"
 #env
 - op: add
-  path: /spec/template/spec/containers/0/env
+  path: /spec/template/spec/containers/0/env/-
   value:
-    - name: MINIAPP_ZIP_BUCKET_NAME
-      value: prod-goxhere-miniapp
-    - name: DOMAIN_NAME
-      value: miniapp.prod.goxhere.com
-    - name: ACCESS_KEY
-      valueFrom:
-        secretKeyRef:
-          name: miniapp 
-          key: accesskey
-    - name: SECRET_KEY
-      valueFrom:
-        secretKeyRef:
-          name: miniapp 
-          key: secretkey
+    name: MINIAPP_ZIP_BUCKET_NAME
+    value: prod-goxhere-miniapp
+- op: add
+  path: /spec/template/spec/containers/0/env/-
+  value:
+    name: DOMAIN_NAME
+    value: miniapp.prod.goxhere.com
+- op: add
+  path: /spec/template/spec/containers/0/env/-
+  value:
+    name: ACCESS_KEY
+    valueFrom:
+      secretKeyRef:
+        name: miniapp 
+        key: accesskey
+- op: add
+  path: /spec/template/spec/containers/0/env/-
+  value:
+    name: SECRET_KEY
+    valueFrom:
+      secretKeyRef:
+        name: miniapp 
+        key: secretkey
