@@ -16,3 +16,21 @@
 - op: replace
   path: /spec/template/spec/containers/0/env/0/value
   value: "3"
+#env
+- op: add
+  path: /spec/template/spec/containers/0/env
+  value:
+    - name: MINIAPP_ZIP_BUCKET_NAME
+      value: prod-goxhere-miniapp
+    - name: DOMAIN_NAME
+      value: miniapp.prod.goxhere.com
+    - name: ACCESS_KEY
+      valueFrom:
+        secretKeyRef:
+          name: miniapp 
+          key: accesskey
+    - name: SECRET_KEY
+      valueFrom:
+        secretKeyRef:
+          name: miniapp 
+          key: secretkey

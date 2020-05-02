@@ -2,3 +2,20 @@
   path: /spec/template/spec/nodeSelector
   value:
     env: test
+- op: add
+  path: /spec/template/spec/containers/0/env
+  value:
+    - name: MINIAPP_ZIP_BUCKET_NAME
+      value: test-goxhere-miniapp
+    - name: DOMAIN_NAME
+      value: miniapp.test.goxhere.com
+    - name: ACCESS_KEY
+      valueFrom:
+        secretKeyRef:
+          name: miniapp 
+          key: accesskey
+    - name: SECRET_KEY
+      valueFrom:
+        secretKeyRef:
+          name: miniapp 
+          key: secretkey
